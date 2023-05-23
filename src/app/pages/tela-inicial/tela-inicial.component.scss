@@ -1,0 +1,122 @@
+.container-master {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 5rem;
+  width: 100%;
+
+  @media(min-width: 1300px) {
+      margin: 0;
+      width: 1250px;
+  }
+
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div ul {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+li {
+  margin-left: 1rem;
+}
+
+.secao_usuario {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/*Cabeçalho*/
+
+main {
+  display: flex;
+  height: 350px;
+
+  aside {
+    max-width: 400px;
+    padding-top: 3rem;
+  }
+}
+
+aside h1 {
+  font-size: 3rem;
+}
+
+aside p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.poster {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/*Filmes Brasileiros*/
+
+.filmes_brasileiros {
+  margin-top: 2rem;
+}
+
+.container-card {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+}
+
+.card {
+  width: 230px;
+  height: 130px;
+  border-radius: 8px;
+  background-color:gray;
+
+  margin-right: 1.2rem;
+  cursor: pointer;
+  transition: .3s;
+
+}
+
+.card:hover {
+  scale: 1.1;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+
+
+
+

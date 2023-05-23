@@ -1,0 +1,66 @@
+<div class="container-master">
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <header>
+      <img src="" alt="Logo do site">
+      <div>
+        <ul>
+          <li>Início</li>
+          <li>Minha área</li>
+        </ul>
+        <div class="secao_usuario">
+          <span>Anderson Alves</span>
+          <img src="../assets//icon-people.svg" alt="avatar">
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Poster -->
+
+    <main>
+      <aside class="poster_principal">
+        <h1>TRANSFORMERS</h1>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+      </aside>
+      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + myUrl + ')'" class="poster"></div>
+    </main>
+
+
+    <!-- Filmes Brasileiros -->
+
+    <section class="filmes_brasileiros">
+      <h2>10 Filmes Brasileiros recentes</h2>
+
+      <div class="container-card">
+        <div class="card" (click)="openDialog()"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </section>
+
+
+    <!-- Filmes Curtidos -->
+
+    <section class="filmes_brasileiros">
+      <h2>Filmes curtidos</h2>
+
+      <div class="container-card">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </section>
+
+
+    <footer>
+      <p>Desenvolvido por Anderson Alves</p>
+    </footer>
+  </div>
+</div>
+
