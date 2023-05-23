@@ -4,8 +4,11 @@
     <div class="campos">
       <input type="text" id="usuario" [(ngModel)]="usuario" name="usuario" autofocus>
       <input type="password" id="senha" [(ngModel)]="senha" name="senha">
-      <button (click)="onLogin()">Entrar</button>
-      <p>Desenolvido por Anderson Alves</p>
+      <button (click)="login()">Entrar</button>
+      <div *ngIf="errorMessage" class="container-error">
+        <p class="error-card">{{ errorMessage }} </p>
+      </div>
+      <span>Desenvolvido por Anderson Alves</span>
     </div>
   </div>
 </div>
