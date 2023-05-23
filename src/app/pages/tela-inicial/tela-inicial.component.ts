@@ -29,7 +29,7 @@ export class TelaInicialComponent {
   openDialog(filme: filmesCurtidos): void {
     this.filmeSelecionado = filme;
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: { id: filme._id,
+      data: { _id: filme._id,
         quantidade_curtidas: filme.quantidade_curtidas,
         imagem: filme.imagem,
         descricao: filme.descricao,

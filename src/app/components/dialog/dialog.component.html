@@ -5,7 +5,7 @@
   <div class="info-filmes">
     <div class="titulos">
       <h3>{{data.titulo}}</h3>
-      <div class="box-curtida">
+      <div class="box-curtida" (click)="handleClickCurtida()">
         <img src="../../../assets/Group.svg" alt="curtida">
         <span>{{data.quantidade_curtidas}}</span>
       </div>
