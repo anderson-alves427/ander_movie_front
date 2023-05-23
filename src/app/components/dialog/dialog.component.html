@@ -1,12 +1,12 @@
 <div class="container-dialog">
-  <div (click)="fechaDialog()" class="close-dialog">close</div>
+  <div (click)="fechaDialog()" class="close-dialog"><mat-icon>close</mat-icon></div>
   <img src="{{data.image}}" alt="imagem" class="imagem-principal">
 
   <div class="info-filmes">
     <div class="titulos">
       <h3>{{data.title}}</h3>
       <div class="box-curtida" (click)="handleClickCurtida()">
-        <img src="../../../assets/Group.svg" alt="curtida">
+        <mat-icon color="primary">thumb_up</mat-icon>
         <span>{{data.count}}</span>
       </div>
     </div>

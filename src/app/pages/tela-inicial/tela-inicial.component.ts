@@ -1,4 +1,3 @@
-import { AppComponent } from './../../app.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';

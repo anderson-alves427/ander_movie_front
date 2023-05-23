@@ -16,7 +16,6 @@
       </div>
     </header>
 
-
     <!-- Poster -->
 
     <section class="section-poster">
@@ -33,13 +32,13 @@
     <section class="filmes_brasileiros">
       <h2>10 Filmes Brasileiros recentes</h2>
 
-      <!-- <div class="container-card">
+      <div class="container-card">
         <div *ngFor="let filme of lista10Filmes">
-          <div class="card" (click)="openDialog(filme)" [style.background-image]="'url(' + filme.image + ')'"></div>
+          <div class="card" (click)="openDialogCurtidos(filme.id, 0, filme.image, filme.plot, filme.title)"
+          [style.background-image]="'url(' + filme.image + ')'"></div>
         </div>
-      </div> -->
+      </div>
     </section>
-
 
     <!-- Filmes Curtidos -->
 
