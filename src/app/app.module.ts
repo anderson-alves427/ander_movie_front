@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 
@@ -13,12 +15,14 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
   declarations: [
     AppComponent,
     TelaInicialComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [{
