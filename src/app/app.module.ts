@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TelaInicialComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
