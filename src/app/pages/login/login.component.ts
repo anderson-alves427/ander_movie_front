@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  usuario: string;
+  senha: string;
+
+  constructor() {
+    this.usuario = '';
+    this.senha = '';
+  }
+
+  onLogin(): void {
+
+  }
 }
