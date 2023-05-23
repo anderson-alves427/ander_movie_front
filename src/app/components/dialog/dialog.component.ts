@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import { filmesCurtidos } from 'src/app/interfaces/filmesCurtidos';
+import { Filmes } from 'src/app/interfaces/filmes';
 import { FilmesService } from 'src/app/services/filmes.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class DialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: filmesCurtidos,
+    @Inject(MAT_DIALOG_DATA) public data: Filmes,
     private service: FilmesService
   ) {}
 
@@ -23,14 +23,16 @@ export class DialogComponent {
   }
 
   handleClickCurtida() {
+    console.log(this.data)
     if (this.filmeJaCurtido) {
-      this.removerCurtida(this.data._id);
+      this.removerCurtida(this.data.id);
     }
 
     if (!this.filmeJaCurtido) {
-      this.curtirFilme(this.data._id);
+      this.curtirFilme(this.data.id);
     }
   }
+
   async curtirFilme(id_filme: string) {
     this.service.curtirFilme(id_filme).subscribe(() => {
       this.filmeJaCurtido = true;

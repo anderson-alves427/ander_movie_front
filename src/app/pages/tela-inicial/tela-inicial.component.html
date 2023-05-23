@@ -34,11 +34,9 @@
       <h2>10 Filmes Brasileiros recentes</h2>
 
       <!-- <div class="container-card">
-        <div class="card" (click)="openDialog()"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div *ngFor="let filme of lista10Filmes">
+          <div class="card" (click)="openDialog(filme)" [style.background-image]="'url(' + filme.image + ')'"></div>
+        </div>
       </div> -->
     </section>
 
@@ -50,11 +48,11 @@
 
       <div class="container-card">
         <div *ngFor="let filme of filmesCurtidos">
-          <div class="card" (click)="openDialog(filme)" [style.background-image]="'url(' + filme.imagem + ')'"></div>
+          <div class="card" (click)="openDialogCurtidos(filme._id, filme.count, filme.image[0],
+          filme. plot[0], filme.title[0])" [style.background-image]="'url(' + filme.image + ')'"></div>
         </div>
       </div>
     </section>
-
 
     <footer>
       <p>Desenvolvido por Anderson Alves</p>

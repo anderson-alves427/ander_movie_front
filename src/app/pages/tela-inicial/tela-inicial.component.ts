@@ -2,6 +2,7 @@ import { AppComponent } from './../../app.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { Filmes } from 'src/app/interfaces/filmes';
 import { filmesCurtidos } from 'src/app/interfaces/filmesCurtidos';
 import { FilmesService } from 'src/app/services/filmes.service';
 
@@ -13,32 +14,29 @@ import { FilmesService } from 'src/app/services/filmes.service';
 export class TelaInicialComponent {
   myUrl: string = '../../../assets/image1.svg';
 
+  lista10Filmes: Filmes[] = [];
   filmesCurtidos: filmesCurtidos[] = [];
-  filmeSelecionado: filmesCurtidos | null = null;
 
   constructor(public dialog: MatDialog, private service: FilmesService) {}
 
   ngOnInit(): void {
-    this.service.listarFilmes().subscribe((listaFilmes) => {
-      console.log(listaFilmes);
-    })
+    // this.service.listarFilmes().subscribe((listaFilmes) => {
+    //   this.lista10Filmes =listaFilmes;
+    // })
 
     this.listarFilmesCurtidos();
   }
 
-  openDialog(filme: filmesCurtidos): void {
-    this.filmeSelecionado = filme;
+  openDialogCurtidos(id_filme: string, count: number, imagem: string, descricao: string, titulo: string): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: { _id: filme._id,
-        quantidade_curtidas: filme.quantidade_curtidas,
-        imagem: filme.imagem,
-        descricao: filme.descricao,
-        titulo: filme.titulo,
+      data: { id: id_filme,
+        count: count,
+        image: imagem,
+        plot: descricao,
+        title: titulo,
       }
     });
-    console.log(filme)
     dialogRef.afterClosed().subscribe(result => {
-      this.filmeSelecionado = null;
     });
   }
 

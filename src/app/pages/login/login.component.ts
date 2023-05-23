@@ -22,10 +22,6 @@ export class LoginComponent {
     this.errorMessage = '';
   }
 
-  onLogin(): void {
-
-  }
-
   async login() {
     this.service.login(this.usuario, this.senha)
     .pipe(
