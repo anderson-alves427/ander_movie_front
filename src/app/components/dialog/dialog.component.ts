@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {MatDialogRef} from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { filmesCurtidos } from 'src/app/interfaces/filmesCurtidos';
 
 @Component({
   selector: 'app-dialog',
@@ -10,6 +11,7 @@ export class DialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: filmesCurtidos
   ) {}
 
   fechaDialog(): void {

@@ -14,6 +14,7 @@ export class TelaInicialComponent {
   myUrl: string = '../../../assets/image1.svg';
 
   filmesCurtidos: filmesCurtidos[] = [];
+  filmeSelecionado: filmesCurtidos | null = null;
 
   constructor(public dialog: MatDialog, private service: FilmesService) {}
 
@@ -25,12 +26,19 @@ export class TelaInicialComponent {
     this.listarFilmesCurtidos();
   }
 
-  openDialog(): void {
+  openDialog(filme: filmesCurtidos): void {
+    this.filmeSelecionado = filme;
     const dialogRef = this.dialog.open(DialogComponent, {
+      data: { id: filme._id,
+        quantidade_curtidas: filme.quantidade_curtidas,
+        imagem: filme.imagem,
+        descricao: filme.descricao,
+        titulo: filme.titulo,
+      }
     });
-
+    console.log(filme)
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.filmeSelecionado = null;
     });
   }
 
