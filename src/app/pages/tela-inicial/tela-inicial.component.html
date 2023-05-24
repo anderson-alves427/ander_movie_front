@@ -3,28 +3,27 @@
 
     <!-- Cabeçalho -->
     <header>
-      <img src="" alt="Logo do site">
+      <span class="logo">AnderMovie</span>
       <div>
         <ul>
           <li>Início</li>
           <li>Minha área</li>
         </ul>
-        <div class="secao_usuario">
+        <div class="secao_usuario" routerLink="/login">
           <span>Anderson Alves</span>
           <img src="../assets//icon-people.svg" alt="avatar">
         </div>
       </div>
     </header>
 
-
     <!-- Poster -->
 
     <section class="section-poster">
       <aside class="poster_principal">
-        <h1>TRANSFORMERS</h1>
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+        <h1>{{lista10Filmes[9].title}}</h1>
+        <p>{{lista10Filmes[9].plot}}</p>
       </aside>
-      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + myUrl + ')'" class="poster"></div>
+      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + lista10Filmes[9].image + ')'" class="poster"></div>
     </section>
 
 
@@ -33,13 +32,13 @@
     <section class="filmes_brasileiros">
       <h2>10 Filmes Brasileiros recentes</h2>
 
-      <!-- <div class="container-card">
-        <div *ngFor="let filme of lista10Filmes">
-          <div class="card" (click)="openDialog(filme)" [style.background-image]="'url(' + filme.image + ')'"></div>
+      <div class="container-card">
+        <div *ngFor="let filme of lista10Filmes" class="container-lista">
+          <div class="card" (click)="openDialogCurtidos(filme.id, 0, filme.image, filme.plot, filme.title)"
+          [style.background-image]="'url(' + filme.image + ')'"></div>
         </div>
-      </div> -->
+      </div>
     </section>
-
 
     <!-- Filmes Curtidos -->
 
@@ -47,7 +46,7 @@
       <h2>Filmes curtidos</h2>
 
       <div class="container-card">
-        <div *ngFor="let filme of filmesCurtidos">
+        <div *ngFor="let filme of filmesCurtidos" class="container-lista">
           <div class="card" (click)="openDialogCurtidos(filme._id, filme.count, filme.image[0],
           filme. plot[0], filme.title[0])" [style.background-image]="'url(' + filme.image + ')'"></div>
         </div>

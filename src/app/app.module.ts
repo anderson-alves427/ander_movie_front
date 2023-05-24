@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     AppRoutingModule,
     MatDialogModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -1,4 +1,3 @@
-import { AppComponent } from './../../app.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
@@ -24,7 +23,7 @@ export class TelaInicialComponent {
     //   this.lista10Filmes =listaFilmes;
     // })
 
-    this.listarFilmesCurtidos();
+    // this.listarFilmesCurtidos();
   }
 
   openDialogCurtidos(id_filme: string, count: number, imagem: string, descricao: string, titulo: string): void {
@@ -37,6 +36,7 @@ export class TelaInicialComponent {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
+      this.listarFilmesCurtidos();
     });
   }
 
@@ -45,5 +45,6 @@ export class TelaInicialComponent {
       this.filmesCurtidos = listaFilmesCurtidos;
     })
   }
+
 }
 
