@@ -27,4 +27,8 @@ export class FilmesService {
     return this.http.delete<any>(this.API + `filme/${id_filme}/curtida`);
   }
 
+  verificaCurtida(id_filme: string): Observable<any> {
+    return this.http.get<any>(this.API + `filme/verificaCurtida/${id_filme}`);
+  }
+
 }

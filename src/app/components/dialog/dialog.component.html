@@ -6,7 +6,7 @@
     <div class="titulos">
       <h3>{{data.title}}</h3>
       <div class="box-curtida" (click)="handleClickCurtida()">
-        <mat-icon color="primary">thumb_up</mat-icon>
+        <mat-icon [ngClass]="filmeJaCurtido ? 'primary-button' : ''" button-like>thumb_up</mat-icon>
         <span>{{data.count}}</span>
       </div>
     </div>

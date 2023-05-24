@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 import { Filmes } from 'src/app/interfaces/filmes';
@@ -15,13 +15,14 @@ export class TelaInicialComponent {
 
   lista10Filmes: Filmes[] = [];
   filmesCurtidos: filmesCurtidos[] = [];
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   constructor(public dialog: MatDialog, private service: FilmesService) {}
 
   ngOnInit(): void {
-    // this.service.listarFilmes().subscribe((listaFilmes) => {
-    //   this.lista10Filmes =listaFilmes;
-    // })
+    this.service.listarFilmes().subscribe((listaFilmes) => {
+      this.lista10Filmes =listaFilmes;
+    })
 
     this.listarFilmesCurtidos();
   }
@@ -43,6 +44,14 @@ export class TelaInicialComponent {
     this.service.listarFilmesCurtidos().subscribe((listaFilmesCurtidos) => {
       this.filmesCurtidos = listaFilmesCurtidos;
     })
+  }
+
+  scrollLeft(): void {
+    this.scrollContainer.nativeElement.scrollLeft -= 200;
+  }
+
+  scrollRight(): void {
+    this.scrollContainer.nativeElement.scrollLeft += 200;
   }
 }
 

@@ -84,8 +84,14 @@ aside p {
 .container-card {
   margin-top: 1rem;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+}
+
+.container-lista {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .card {
@@ -93,6 +99,8 @@ aside p {
   height: 130px;
   border-radius: 8px;
   background-color:gray;
+  display: inline-block;
+  white-space: nowrap;
 
   background-size: cover;
   background-position: center;

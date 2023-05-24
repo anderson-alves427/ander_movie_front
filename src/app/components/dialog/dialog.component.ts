@@ -18,6 +18,10 @@ export class DialogComponent {
     private service: FilmesService
   ) {}
 
+  ngOnInit(): void {
+    this.verificaCurtida();
+  }
+
   fechaDialog(): void {
     this.dialogRef.close();
   }
@@ -42,6 +46,12 @@ export class DialogComponent {
   async removerCurtida(id_filme: string) {
     this.service.removeCurtida(id_filme).subscribe(() => {
       this.filmeJaCurtido = false;
+    })
+  }
+
+  async verificaCurtida() {
+    this.service.verificaCurtida(this.data.id).subscribe((response) => {
+      this.filmeJaCurtido = response;
     })
   }
 }
