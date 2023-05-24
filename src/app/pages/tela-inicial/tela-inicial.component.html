@@ -1,0 +1,61 @@
+<div class="container-master">
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <header>
+      <span class="logo">AnderMovie</span>
+      <div>
+        <ul>
+          <li>Início</li>
+          <li>Minha área</li>
+        </ul>
+        <div class="secao_usuario" routerLink="/login">
+          <span>Anderson Alves</span>
+          <img src="../assets//icon-people.svg" alt="avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Poster -->
+
+    <section class="section-poster">
+      <aside class="poster_principal">
+        <h1>{{lista10Filmes[9].title}}</h1>
+        <p>{{lista10Filmes[9].plot}}</p>
+      </aside>
+      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + lista10Filmes[9].image + ')'" class="poster"></div>
+    </section>
+
+
+    <!-- Filmes Brasileiros -->
+
+    <section class="filmes_brasileiros">
+      <h2>10 Filmes Brasileiros recentes</h2>
+
+      <div class="container-card">
+        <div *ngFor="let filme of lista10Filmes" class="container-lista">
+          <div class="card" (click)="openDialogCurtidos(filme.id, 0, filme.image, filme.plot, filme.title)"
+          [style.background-image]="'url(' + filme.image + ')'"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filmes Curtidos -->
+
+    <section class="filmes_brasileiros">
+      <h2>Filmes curtidos</h2>
+
+      <div class="container-card">
+        <div *ngFor="let filme of filmesCurtidos" class="container-lista">
+          <div class="card" (click)="openDialogCurtidos(filme._id, filme.count, filme.image[0],
+          filme. plot[0], filme.title[0])" [style.background-image]="'url(' + filme.image + ')'"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Desenvolvido por Anderson Alves</p>
+    </footer>
+  </div>
+</div>
+
