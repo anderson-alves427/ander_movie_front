@@ -3,13 +3,13 @@
 
     <!-- Cabeçalho -->
     <header>
-      <img src="" alt="Logo do site">
+      <span class="logo">AnderMovie</span>
       <div>
         <ul>
           <li>Início</li>
           <li>Minha área</li>
         </ul>
-        <div class="secao_usuario">
+        <div class="secao_usuario" routerLink="/login">
           <span>Anderson Alves</span>
           <img src="../assets//icon-people.svg" alt="avatar">
         </div>
@@ -23,7 +23,7 @@
         <h1>{{lista10Filmes[9].title}}</h1>
         <p>{{lista10Filmes[9].plot}}</p>
       </aside>
-      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + lista10Filmes[0].image + ')'" class="poster"></div>
+      <div  [style.background-image]="'linear-gradient(to right, #141414, rgba(0, 0, 0, 0)), url(' + lista10Filmes[9].image + ')'" class="poster"></div>
     </section>
 
 

@@ -40,12 +40,14 @@ export class DialogComponent {
   async curtirFilme(id_filme: string) {
     this.service.curtirFilme(id_filme).subscribe(() => {
       this.filmeJaCurtido = true;
+      this.data.count = + 1;
     })
   }
 
   async removerCurtida(id_filme: string) {
     this.service.removeCurtida(id_filme).subscribe(() => {
       this.filmeJaCurtido = false;
+      this.data.count = - 1;
     })
   }
 
@@ -54,4 +56,5 @@ export class DialogComponent {
       this.filmeJaCurtido = response;
     })
   }
+
 }
