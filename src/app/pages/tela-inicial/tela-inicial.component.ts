@@ -19,11 +19,11 @@ export class TelaInicialComponent {
   constructor(public dialog: MatDialog, private service: FilmesService) {}
 
   ngOnInit(): void {
-    // this.service.listarFilmes().subscribe((listaFilmes) => {
-    //   this.lista10Filmes =listaFilmes;
-    // })
+    this.service.listarFilmes().subscribe((listaFilmes) => {
+      this.lista10Filmes =listaFilmes;
+    })
 
-    // this.listarFilmesCurtidos();
+    this.listarFilmesCurtidos();
   }
 
   openDialogCurtidos(id_filme: string, count: number, imagem: string, descricao: string, titulo: string): void {
